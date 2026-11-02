@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb, seedAll } from "@/lib/store";
+import { getDb } from "@/lib/store";
 
 // API générique de lecture/ajout sur les collections simulées.
 // GET  /api/petitions          → liste complète
@@ -17,6 +17,7 @@ const VALID = new Set([
   "petitions",
   "veterans",
   "transactions",
+  "dozReports",
   // Éducation (EDEBO + NMT)
   "eduDiplomas",
   "eduStudents",
