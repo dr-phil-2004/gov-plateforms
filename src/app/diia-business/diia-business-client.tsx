@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-interface BusinessTool {
+export interface BusinessTool {
   id: string;
   name: string;
   description: string;
@@ -12,7 +12,7 @@ interface BusinessTool {
   clients: number;
 }
 
-interface Hub {
+export interface Hub {
   id: string;
   city: string;
   address: string;
