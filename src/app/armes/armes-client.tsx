@@ -8,7 +8,7 @@ import { Input, Label } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-interface Permit {
+export interface Permit {
   id: string;
   holder: string;
   permitNumber: string;
@@ -18,7 +18,7 @@ interface Permit {
   status: string;
 }
 
-interface WeaponRequest {
+export interface WeaponRequest {
   id: string;
   applicant: string;
   categories: string[];
