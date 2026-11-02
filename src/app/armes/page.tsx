@@ -1,10 +1,6 @@
 import { PlatformShell } from "@/components/platform-shell";
 import { getDb } from "@/lib/store";
-import {
-  ArmesClient,
-  type Permit,
-  type WeaponRequest,
-} from "./armes-client";
+import { ArmesClient } from "./armes-client";
 
 // Module Permis d'armes — registre Diia (démo).
 export default function ArmesPage() {
