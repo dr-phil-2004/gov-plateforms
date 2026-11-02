@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input, Label } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-interface Certificate {
+export interface Certificate {
   id: string;
   holder: string;
   issuer: string;
@@ -24,7 +24,7 @@ const VARIANT: Record<string, "success" | "warning" | "secondary"> = {
 };
 
 // Module CZO (démo) : certificats de signature électronique émis et
-// génération simulée. Données fictives.
+génération simulée. Données fictives.
 export function CzoClient({ initial }: { initial: Certificate[] }) {
   const [certs, setCerts] = useState(initial);
   const [holder, setHolder] = useState("");
