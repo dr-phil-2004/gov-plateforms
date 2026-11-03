@@ -62,11 +62,11 @@ export function OsvitaVeteranivClient({ initial }: { initial: Course[] }) {
     }
   }
 
-  const formatVariant = {
+  const formatVariant: Record<string, "secondary" | "default" | "warning"> = {
     "en ligne": "secondary",
     présentiel: "default",
     hybride: "warning",
-  } as const;
+  };
 
   return (
     <div className="space-y-6">
