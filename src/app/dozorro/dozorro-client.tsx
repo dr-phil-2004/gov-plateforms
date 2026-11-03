@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input, Label, Textarea } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export interface DozReport {
@@ -301,7 +302,7 @@ export function DozorroClient({
             <Label>Gravité</Label>
             <Tabs
               value={severityFilter}
-            onValueChange={(v) => setSeverityFilter(v as SeverityFilter)}
+              onValueChange={(v) => setSeverityFilter(v as SeverityFilter)}
             >
               <TabsList>
                 <TabsTrigger value="toutes">Toutes</TabsTrigger>
