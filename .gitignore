@@ -4,3 +4,6 @@ out/
 *.log
 .env*
 .env
+
+tsconfig.tsbuildinfo
+bash.exe.stackdump
