@@ -1,13 +1,11 @@
-import "@/lib/init-demo-data";
 import { getDb, type DbShape } from "@/lib/store";
 
 export type CollectionName = keyof DbShape;
 
 /**
  * Contrat commun entre les modules et leur source de données.
- * Les pages de démonstration lisent des collections; les workflows écrivent
- * un élément. Une implémentation réelle pourra être ajoutée derrière ce contrat
- * après configuration explicite d'une API officielle/autorisée.
+ * La démo lit/écrit une collection en mémoire ; une implémentation réelle pourra être
+ * ajoutée derrière ce contrat après configuration explicite d'une API officielle/autorisée.
  */
 export interface DataSource {
   readonly mode: "demo";
@@ -15,12 +13,11 @@ export interface DataSource {
   create(collection: CollectionName, value: Record<string, unknown>): Record<string, unknown>;
 }
 
-/** Source locale de démonstration, isolée pour faciliter un futur adaptateur. */
 class DemoDataSource implements DataSource {
   readonly mode = "demo" as const;
 
   list<T = unknown>(collection: CollectionName): T[] {
-    return getDb()[collection] as T[];
+    return getDb()[collection] as unknown as T[];
   }
 
   create(collection: CollectionName, value: Record<string, unknown>) {
