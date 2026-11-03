@@ -3,6 +3,7 @@ import { PLATFORMS } from "@/lib/platforms";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { getTheme } from "@/lib/themes";
 
 const statusVariant: Record<string, "success" | "warning" | "secondary" | "destructive"> = {
   "en-service": "success",
@@ -22,15 +23,19 @@ export default function Home() {
           Portail des plateformes publiques
         </h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Six plateformes numériques publiques reconstituées à titre de démonstration,
-          inspirées du registre des projets gouvernementaux (écosystème Diia).
+          {PLATFORMS.length} modules couvrant les 29 plateformes numériques publiques du registre (eDumka est intégrée au module Pétitions), reconstitués à titre de démonstration,
+          inspirés du registre des projets gouvernementaux (écosystème Diia).
           Chaque module fonctionne avec un jeu de données fictif et des workflows simulés.
         </p>
       </header>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {PLATFORMS.map((p) => (
-          <Card key={p.slug} className="flex flex-col">
+          <Card
+            key={p.slug}
+            className="flex flex-col"
+            style={{ borderTop: `4px solid ${getTheme(p.slug).primary}` }}
+          >
             <CardHeader>
               <div className="mb-2 flex items-center gap-2">
                 <Badge variant={statusVariant[p.status]}>{p.statusLabel}</Badge>
