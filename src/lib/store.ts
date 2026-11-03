@@ -114,6 +114,11 @@ export function getDb(): DbShape {
   return db;
 }
 
+// Seed au chargement du module : garantit que les données fictives sont
+// présentes même si la page accède directement à getDb() sans passer
+// par la couche DataSource.
+seedAll();
+
 export function seedAll(): void {
   const now = new Date().toISOString();
 
