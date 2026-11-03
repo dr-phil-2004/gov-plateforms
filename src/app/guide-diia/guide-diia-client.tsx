@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input, Label } from "@/components/ui/input";
 
-interface Service {
+export interface Service {
   id: string;
   name: string;
   category: string;
