@@ -54,6 +54,7 @@ export function SiteHeader({ search }: { search: SearchItem[] }) {
             ["/#plateformes", "Plateformes"],
             ["/mon-espace", "Mon espace"],
             ["/suivi", "Suivre un dossier"],
+            ["/comparaison", "Comparaison Ukraine"],
           ].map(([href, label]) => (
             <Link key={href} href={href} className="rounded-full px-4 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary hover:text-foreground">
               {label}
@@ -105,6 +106,7 @@ export function SiteFooter() {
               <li><Link href="/suivi" className="hover:underline">Suivre un dossier</Link></li>
               <li><Link href="/mon-espace" className="hover:underline">Mon espace</Link></li>
               <li><Link href="/#plateformes" className="hover:underline">Toutes les plateformes</Link></li>
+              <li><Link href="/comparaison" className="hover:underline">Comparaison Ukraine</Link></li>
             </ul>
             <p className="mt-6 flex items-center gap-2 text-xs text-primary-foreground/60">
               <SearchIcon className="h-3.5 w-3.5" aria-hidden="true" /> Appuyez sur « / » pour rechercher
